@@ -30,9 +30,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "assets/styles/bootstrap.css",
+              "assets/styles/coming-soon.css",
+              "assets/styles/documenter_style.css",
+              "assets/styles/helvetica.css",
+              "assets/styles/vendor/jquery-ui.theme.css",
+              "assets/styles/vendor/validation-engine.css",
+              "assets/styles/bootstrap-responsive.css"
             ],
-            "scripts": []
+            "scripts": ["assets/js/jquery.js","assets/js/script.js","assets/js/bootstrap-min.js","assets/js/jquery.easing.js","assets/js/jquery.scrollTo.js"]
           },
           "configurations": {
             "production": {

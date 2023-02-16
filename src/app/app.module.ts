@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { RedirectComponent } from './redirect/redirect.component';
 import { FallBackComponent } from './fall-back/fall-back.component';
 import { GitAuthComponent } from './git-auth/git-auth.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { GitAuthComponent } from './git-auth/git-auth.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
     HttpClientXsrfModule
   ],
