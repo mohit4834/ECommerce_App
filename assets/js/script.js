@@ -17,7 +17,7 @@
 		iDeviceNotOS4 = (navigator.userAgent.match(/iphone|ipod|ipad/i) && !navigator.userAgent.match(/OS 5/i)) || false,
 		badIE = $('html').prop('class').match(/ie(6|7|8)/)|| false;
 
-	duration = parseInt(duration,10);
+	var duration = parseInt(duration,10);
 
 	$('.dropdown-toggle').dropdown();
 

@@ -1,45 +1,37 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { ExtUrlResolverService } from './ext-url-resolver.service';
-import { FallBackComponent } from './fall-back/fall-back.component';
-import { GitAuthComponent } from './git-auth/git-auth.component';
 import { LoginComponent } from './login/login.component';
-import { RedirectComponent } from './redirect/redirect.component';
 
 const routes: Routes = [
   {
-    path:"",
-    pathMatch:"full",
-    redirectTo:'login'
-    },
-    {
-    path:'dashboard',
-    component:DashboardComponent
-    },
-    {
-    path:'login',
-    component:LoginComponent
-    },
-    {
-    path:'redirect',
-    component:RedirectComponent
-    },
-    {
-    path: 'test',
-    component: GitAuthComponent,
-    resolve: {
-    url: ExtUrlResolverService
-    }
-    },
-    {
-    path:'**',
-    component:FallBackComponent
-    }
+    path: '',
+    pathMatch: 'full',
+    loadChildren: () =>
+      import('./features/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'redirect',
+    loadChildren: () =>
+      import('./features/callback/callback.module').then(
+        (m) => m.CallbackModule
+      ),
+  },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./features/fallback/fallback.module').then(
+        (m) => m.FallbackModule
+      ),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
