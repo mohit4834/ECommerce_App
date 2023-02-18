@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: '""| home',
     pathMatch: 'full',
     loadChildren: () =>
       import('./features/home/home.module').then((m) => m.HomeModule),
@@ -15,10 +15,23 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
+    path: 'facebook-login',
+    pathMatch: 'full',
+    loadChildren: () =>
+      import('./features/facebook-login/facebook-login.module').then((m) => m.FacebookLoginModule),
+  },
+  {
     path: 'redirect',
     loadChildren: () =>
       import('./features/callback/callback.module').then(
         (m) => m.CallbackModule
+      ),
+  },
+  {
+    path: 'compare',
+    loadChildren: () =>
+      import('./features/compare/compare.module').then(
+        (m) => m.CompareModule
       ),
   },
   {

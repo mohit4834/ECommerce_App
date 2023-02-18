@@ -20,7 +20,7 @@ export const environment = {
     clientId,
     authorizationParams: {
       ...(audience && audience !== 'YOUR_API_IDENTIFIER' ? { audience } : null),
-      redirect_uri: 'http://127.0.0.1:4200/redirect',
+      redirect_uri: 'http://localhost:4200/redirect',
     },
     errorPath,
   },

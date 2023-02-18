@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FallbackComponent } from './fallback.component';
+import { FacebookLoginComponent } from './facebook-login.component';
 
 const routes: Routes = [
   {
     path: "",
-    component: FallbackComponent,
+    component: FacebookLoginComponent,
   }
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class FallbackRoutingModule { }
+export class FacebookLoginRoutingModule { }
