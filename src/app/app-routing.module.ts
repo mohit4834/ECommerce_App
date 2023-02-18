@@ -5,7 +5,13 @@ import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
-    path: '""| home',
+    path: '',
+    pathMatch: 'full',
+    loadChildren: () =>
+      import('./features/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'home',
     pathMatch: 'full',
     loadChildren: () =>
       import('./features/home/home.module').then((m) => m.HomeModule),

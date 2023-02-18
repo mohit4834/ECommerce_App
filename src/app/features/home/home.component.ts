@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,13 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class HomeComponent {
 
-  constructor(private auth: AuthService) {}
+  isAuthenticated$: Observable<boolean> = this.authService.isAuthenticated$;
+  constructor(private authService: AuthService) {
+    this.isAuthenticated$.subscribe(val => {console.log("isAuthenticated$ value is",val)})
+  }
 
   handleSignUp(): void {
-    this.auth.loginWithRedirect({
+    this.authService.loginWithRedirect({
       appState: {
         target: '/profile',
       },

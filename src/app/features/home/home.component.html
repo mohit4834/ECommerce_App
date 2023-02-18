@@ -90,50 +90,55 @@
                            <i class="icon-bag"></i> (2)
                         </a>
                      </li>
-                     <li class="btn-group dropdown">
-                        <a  href="#" class="pm_item" data-toggle="dropdown" title="login">
-                           <i class="icon-login"></i>
-                           <span class="hidden-sm hidden-xs">Login</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" role="menu">
-                           <span class="dropdown-triangle-up"></span>
-                           <a href="#" class="dd-close-btn"><i class="icon_close"></i></a>
-                           <div class="dropdown-head">
-                              <h4 class="pull-left">Sign in</h4>
-                           </div>
-                           <div class="dd-wrapper">
-                              <div id="dd-social-login">
-                                 <div class="title"><span>Sign in using</span></div>
-                                 <a [routerLink]="['/facebook-login']" class="btn facebook-btn"><i class="social_facebook "></i>FACEBOOK</a>
-                                 <a href="#" class="btn twitter-btn"><i class="social_twitter"></i>TWITTER</a>
-                              </div>
-                              <div id="dd_login">
-                                 <form action="/" method="post">
-                                    <div class="required form-group">
-                                       <input type="text" name="email" placeholder="Email / Login" class="placeholder-fix">
-                                       <i class="icon_mail field-icon"></i>
-                                    </div>
-                                    <div class="required form-group">
-                                       <input type="password" name="password" placeholder="Password" class="placeholder-fix">
-                                       <i class="icon_lock field-icon"></i>
-                                    </div>
-                                    <div class="form-group">
-                                       <input id="remember" class="stl" type="checkbox" value="1" name="remember">
-                                       <label class="stl" for="remember"><span></span>remember me</label>
-                                    </div>
-                                    <div class="form-group text-center">
-                                       <button type="button" (click)="handleSignUp()" class="btn btn-sm btn-third-col">Login</button>
-                                    </div>
-                                    <div class="text-center"><a href="coming-soon.html" class="active">Foget your password?</a></div>
-                                    <div class="dd-delimiter"></div>
-                                    <div class="form-group text-center">
-                                       <button type="button" class="btn btn-sm btn-sec-col">Register</button>
-                                    </div>
-                                 </form>
-                              </div>
-                           </div>
-                        </div>
-                     </li>
+                     <ng-container *ngIf="isAuthenticated$ | async; else unAuthenticated">
+                      <app-logout-button></app-logout-button>
+                  </ng-container>
+                  <ng-template #unAuthenticated>
+                    <li class="btn-group dropdown">
+                       <a  href="#" class="pm_item" data-toggle="dropdown" title="login">
+                          <i class="icon-login"></i>
+                          <span class="hidden-sm hidden-xs">Login</span>
+                       </a>
+                       <div class="dropdown-menu dropdown-menu-right" role="menu">
+                          <span class="dropdown-triangle-up"></span>
+                          <a href="#" class="dd-close-btn"><i class="icon_close"></i></a>
+                          <div class="dropdown-head">
+                             <h4 class="pull-left">Sign in</h4>
+                          </div>
+                          <div class="dd-wrapper">
+                             <div id="dd-social-login">
+                                <div class="title"><span>Sign in using</span></div>
+                                <a [routerLink]="['/facebook-login']" class="btn facebook-btn"><i class="social_facebook "></i>FACEBOOK</a>
+                                <a href="#" class="btn twitter-btn"><i class="social_twitter"></i>TWITTER</a>
+                             </div>
+                             <div id="dd_login">
+                                <form action="/" method="post">
+                                   <div class="required form-group">
+                                      <input type="text" name="email" placeholder="Email / Login" class="placeholder-fix">
+                                      <i class="icon_mail field-icon"></i>
+                                   </div>
+                                   <div class="required form-group">
+                                      <input type="password" name="password" placeholder="Password" class="placeholder-fix">
+                                      <i class="icon_lock field-icon"></i>
+                                   </div>
+                                   <div class="form-group">
+                                      <input id="remember" class="stl" type="checkbox" value="1" name="remember">
+                                      <label class="stl" for="remember"><span></span>remember me</label>
+                                   </div>
+                                   <div class="form-group text-center">
+                                      <button type="button" (click)="handleSignUp()" class="btn btn-sm btn-third-col">Login</button>
+                                   </div>
+                                   <div class="text-center"><a href="coming-soon.html" class="active">Foget your password?</a></div>
+                                   <div class="dd-delimiter"></div>
+                                   <div class="form-group text-center">
+                                      <button type="button" class="btn btn-sm btn-sec-col">Register</button>
+                                   </div>
+                                </form>
+                             </div>
+                          </div>
+                       </div>
+                    </li>
+                  </ng-template>
                      <li class="btn-group hidden-xs dropdown">
                         <a href="#" class="pm_item" data-toggle="dropdown" title="Wishlist">
                            <i class="icon-heart"></i>

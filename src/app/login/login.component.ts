@@ -25,7 +25,7 @@ export class LoginComponent {
     console.warn(this.loginForm.value);
     this.auth.loginWithRedirect({
       appState: {
-        target: '/profile',
+        target: '/home',
       },
       authorizationParams: {
         screen_hint: 'signup',
