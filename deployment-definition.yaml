@@ -37,7 +37,7 @@ metadata:
 spec:
   template:
     metadata:
-      name: mohit-assignment
+      name: ecommerce-app-mohit
       labels:
         app: myapp
         type: front-end
