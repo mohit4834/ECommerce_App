@@ -1,5 +1,5 @@
 pipeline {
-    
+
 agent any
 
 environment {
@@ -14,17 +14,15 @@ tools {
         stage('Build') {
             steps {
 				powershell 'npm install'
-                powershell 'npm install -g @angular/cli' 
+                powershell 'npm install -g @angular/cli'
             }
         }
-        stage('Sonarqube Analysis') {
+        stage('Test Case Execution') {
             when {
-                branch 'develop'
+                branch 'master'
             }
             steps {
-                withSonarQubeEnv('SonarQubeScanner') {
-                  bat "${scannerHome}/bin/sonar-scanner"
-                }
+                powershell 'npm run test'
             }
         }
         stage('Kubernetes Deployment') {
