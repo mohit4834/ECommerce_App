@@ -24,6 +24,9 @@ export const environment = {
     },
     errorPath,
   },
+  api : {
+    serverUrl: 'http://localhost:8081'
+  },
   httpInterceptor: {
     allowedList: [`${apiUri}/*`],
   },

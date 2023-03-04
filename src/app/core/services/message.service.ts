@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { mergeMap, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 import { environment as env } from '../../../environments/environment';
 import { ApiResponseModel, MessageModel, RequestConfigModel } from '../models';
 import { ExternalApiService } from './external-api.service';
@@ -8,25 +10,26 @@ import { ExternalApiService } from './external-api.service';
   providedIn: 'root'
 })
 export class MessageService {
-  constructor(public externalApiService: ExternalApiService) {}
+  constructor(public externalApiService: ExternalApiService, private http: HttpClient) {}
 
-  getPublicResource = (): Observable<ApiResponseModel> => {
+  getAllProducts = (): Observable<ApiResponseModel> => {
     const config: RequestConfigModel = {
-      url: `${env.api.serverUrl}/api/messages/public`,
+      url: `${env.api.serverUrl}/products`,
       method: 'GET',
       headers: {
         'content-type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
       },
     };
 
-    return this.externalApiService.callExternalApi(config).pipe(
-      mergeMap((response) => {
+    return this.http.get(config.url,config.headers).pipe(
+      mergeMap((response:any) => {
+        console.log('response received from the api is : ', response);
         const { data, error } = response;
 
-        return of({
-          data: data ? (data as MessageModel) : null,
-          error,
-        });
+        return of(
+          response
+        );
       })
     );
   };
@@ -41,7 +44,7 @@ export class MessageService {
     };
 
     return this.externalApiService.callExternalApi(config).pipe(
-      mergeMap((response) => {
+      mergeMap((response:any) => {
         const { data, error } = response;
 
         return of({
@@ -62,7 +65,7 @@ export class MessageService {
     };
 
     return this.externalApiService.callExternalApi(config).pipe(
-      mergeMap((response) => {
+      mergeMap((response:any) => {
         const { data, error } = response;
 
         return of({

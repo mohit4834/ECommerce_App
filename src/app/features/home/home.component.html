@@ -752,10 +752,10 @@
                      <ul class="pl-pages">
                         <li class="active">
                            <div class="row">
-                              <div class="col-md-3 col-sm-6 pl-item">
+                              <div class="col-md-3 col-sm-6 pl-item" *ngFor="let product of productsList; let i = index">
                                  <figure>
                                     <a href="product-page.html">
-                                       <img src="images/products/thumbs/1.jpg" alt="">
+                                       <img src={{product.imagePath}} alt={{product.title}}>
                                     </a>
                                     <label class="pl-badge">NEW</label>
                                     <figcaption>
@@ -770,11 +770,11 @@
                                        <span class="pl-price-old">$ 950.00</span>
                                        <span class="pl-price">$ 900.00</span>
                                     </p>
-                                    <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
+                                    <p class="pl-name">{{product.title}}</p>
                                     <span class="stars-rating stars-4"><span class="stars"></span></span>
                                  </div>
                               </div>
-                              <div class="col-md-3 col-sm-6 pl-item">
+                              <!-- <div class="col-md-3 col-sm-6 pl-item">
                                  <figure>
                                    <a href="product-page.html" class="pl-w-backside">
                                        <img src="images/products/thumbs/2.jpg" alt="">
@@ -942,7 +942,7 @@
                                     <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
                                     <span class="stars-rating"><span class="stars"></span></span>
                                  </div>
-                              </div>
+                              </div> -->
                            </div>
                         </li>
                         <li>

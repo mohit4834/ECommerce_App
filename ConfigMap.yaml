@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: special-config
+  namespace: kubernetes-cluster-mohitgoyal
+  labels:
+    app: special-config
+data:
+  API_URL: "https://api.spaceXdata.com/v3/launches?limit=100"
+  ENVIRONMENT: "dev"
+  dev_production_flag: "False"
