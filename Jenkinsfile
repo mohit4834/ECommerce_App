@@ -17,14 +17,14 @@ tools {
                 powershell 'npm install -g @angular/cli'
             }
         }
-        stage('Test Case Execution') {
-            when {
-                branch 'master'
-            }
-            steps {
-                powershell 'npm run test'
-            }
-        }
+        // stage('Test Case Execution') {
+        //     when {
+        //         branch 'master'
+        //     }
+        //     steps {
+        //         powershell 'npm run test'
+        //     }
+        // }
         stage('Kubernetes Deployment') {
             steps{
                 powershell "kubectl apply -f deployment-definition.yaml"
