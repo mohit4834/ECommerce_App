@@ -44,7 +44,7 @@ spec:
     spec:
       containers:
         - name: myapp
-          image: goyalmohit48/ecommerce_app
+          image: goyalmohit48/ecommerce-frontend
           imagePullPolicy: Always
           envFrom:
           - configMapRef:

@@ -1,38 +1,32 @@
-FROM node:16-alpine AS build
+#base image
+FROM nginx as base
 
+RUN rm -rf /usr/share/nginx/html/*
 
-RUN mkdir -p /app
+VOLUME /usr/share/nginx/html
 
+# build image
+FROM node:16.13.0 as build
+
+# set working directory
 WORKDIR /app
 
-COPY package.json .
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
 
-RUN npm install --legacy-peer-deps
+# install and cache app dependencies
+COPY package.json /app/package.json
+RUN npm install
+RUN npm install -g @angular/cli
 
-COPY . .
+# add app
+COPY . /app
 
-RUN npm run build
+# build app
+RUN npm run build --prod --aot --outputHashing=all
 
-# -----------------
+FROM base as final
 
-FROM node:16-alpine
+COPY --from=build /app/dist/ecommerce-app-mohit /usr/share/nginx/html/
 
-RUN mkdir -p /app
-
-WORKDIR /app
-
-COPY package.json .
-
-RUN npm install --production --legacy-peer-deps
-
-COPY --from=build ./dist/ecommerce-app-mohit ./dist
-COPY ./auth_config.json .
-
-ENV NODE_ENV=production
-ENV SERVER_PORT=4200
-ENV API_SERVER_PORT=8081
-
-EXPOSE 4200
-EXPOSE 8081
-
-CMD ["npm", "run", "prod"]
+CMD ["nginx", "-g", "daemon off;"]
