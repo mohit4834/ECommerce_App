@@ -4,6 +4,7 @@ agent any
 
 environment {
     scannerHome = tool name: 'Test_Sonar'
+    KUBECONFIG = 'C:/Users/mohitgoyal/.kube/config'
 }
 
 tools {
@@ -27,7 +28,7 @@ tools {
         // }
         stage('Kubernetes Deployment') {
             steps{
-                powershell "kubectl --kubeconfig=C:/Users/mohitgoyal/.kube get pods -n kubernetes-cluster-mohitgoyal -o wide"
+                powershell "kubectl --kubeconfig=KUBECONFIG get rs -n kubernetes-cluster-mohitgoyal -o wide"
             }
         }
     }
