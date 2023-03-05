@@ -28,8 +28,16 @@ tools {
         // }
         stage('Kubernetes Deployment') {
             steps{
-                powershell "kubectl --kubeconfig=KUBECONFIG get rs -n kubernetes-cluster-mohitgoyal -o wide"
+                echo "environment variable path ${KUBECONFIG}"
+                echo "workspace path is ${env.WORKSPACE}"
+                powershell "kubectl --kubeconfig=${KUBECONFIG} get rs -n kubernetes-cluster-mohitgoyal -o wide"
             }
+        }
+
+        stage('gcloud login') {
+          steps {
+            powershell "gcloud auth login"
+          }
         }
     }
 }
