@@ -4,6 +4,7 @@ agent any
 
 environment {
     scannerHome = tool name: 'Test_Sonar'
+    CLOUDSDK_CONFIG = "C:/Users/mohitgoyal/.kube"
 }
 
 tools {
@@ -27,7 +28,7 @@ tools {
         // }
         stage('Kubernetes Deployment') {
             steps{
-                powershell "kubectl --kubeconfig=C:/ProgramData/Jenkins/.jenkins/.kube/config get pods -n kubernetes-cluster-mohitgoyal -o wide"
+                powershell "kubectl get pods -n kubernetes-cluster-mohitgoyal -o wide"
             }
         }
     }
