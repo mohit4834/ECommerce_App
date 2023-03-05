@@ -27,7 +27,7 @@ tools {
         // }
         stage('Kubernetes Deployment') {
             steps{
-                powershell "kubectl --kubeconfig=/.kube/config get pods -n kubernetes-cluster-mohitgoyal -o wide"
+                powershell "kubectl --kubeconfig=C:/ProgramData/Jenkins/.jenkins/.kube/config get pods -n kubernetes-cluster-mohitgoyal -o wide"
             }
         }
     }
