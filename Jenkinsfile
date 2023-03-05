@@ -27,7 +27,7 @@ tools {
         // }
         stage('Kubernetes Deployment') {
             steps{
-                powershell "kubectl apply -f deployment-definition.yaml"
+                powershell "kubectl --kubeconfig=/.kube/config get pods -n kubernetes-cluster-mohitgoyal -o wide"
             }
         }
     }
