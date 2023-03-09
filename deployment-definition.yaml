@@ -37,7 +37,7 @@ metadata:
 spec:
   template:
     metadata:
-      name: ecommerce-app-mohit
+      name: ecom-frontend
       labels:
         app: myapp
         type: front-end
@@ -74,7 +74,7 @@ spec:
 apiVersion: "v1"
 kind: "Service"
 metadata:
-  name: "myapp-deployment-service"
+  name: "myapp-deployment-service-frontend"
   namespace: "kubernetes-cluster-mohitgoyal"
   labels:
     app: "myapp"
