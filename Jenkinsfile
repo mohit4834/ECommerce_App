@@ -30,14 +30,8 @@ tools {
             steps{
                 echo "environment variable path ${KUBECONFIG}"
                 echo "workspace path is ${env.WORKSPACE}"
-                powershell "kubectl --kubeconfig=${KUBECONFIG} get rs -n kubernetes-cluster-mohitgoyal -o wide"
+                powershell "kubectl --kubeconfig=${KUBECONFIG} apply -f deployment-definition.yaml""
             }
-        }
-
-        stage('gcloud login') {
-          steps {
-            powershell "gcloud auth login"
-          }
         }
     }
 }
