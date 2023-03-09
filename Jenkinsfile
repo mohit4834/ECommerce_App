@@ -30,7 +30,7 @@ tools {
             steps{
                 echo "environment variable path ${KUBECONFIG}"
                 echo "workspace path is ${env.WORKSPACE}"
-                powershell "kubectl --kubeconfig=${KUBECONFIG} apply -f deployment-definition.yaml""
+                powershell "kubectl --kubeconfig=${KUBECONFIG} apply -f deployment-definition.yaml"
             }
         }
     }
