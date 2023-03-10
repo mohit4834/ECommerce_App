@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ExtUrlResolverService } from './ext-url-resolver.service';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -19,12 +18,6 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-  },
-  {
-    path: 'facebook-login',
-    pathMatch: 'full',
-    loadChildren: () =>
-      import('./features/facebook-login/facebook-login.module').then((m) => m.FacebookLoginModule),
   },
   {
     path: 'redirect',
