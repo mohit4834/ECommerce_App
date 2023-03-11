@@ -23,8 +23,8 @@ metadata:
   name: top-secret
   namespace: kubernetes-cluster-mohitgoyal
 data:
-  DB_Password: UXdlcnR5QDEyMw==
-  User_ID: Z295YWxtb2hpdDQ4
+  AUTH0_CLIENT_ID: BISIeqnm9LaUWvzwMBSyF5wlUGFcY3oO
+  AUTH0_DOMAIN: dev-n7du436oqraq4e7k.us.auth0.com
 type: Opaque
 ---
 apiVersion: "apps/v1"
@@ -33,17 +33,17 @@ metadata:
   name: myapp-deployment
   namespace: "kubernetes-cluster-mohitgoyal"
   labels:
-    app: myapp
+    app: myapp-frontend
 spec:
   template:
     metadata:
       name: ecom-frontend
       labels:
-        app: myapp
+        app: myapp-frontend
         type: front-end
     spec:
       containers:
-        - name: myapp
+        - name: myapp-frontend
           image: goyalmohit48/ecommerce-frontend
           imagePullPolicy: Always
           envFrom:
@@ -69,7 +69,7 @@ spec:
   selector:
     matchLabels:
       type: front-end
-      app: myapp
+      app: myapp-frontend
 ---
 apiVersion: "v1"
 kind: "Service"
@@ -77,13 +77,13 @@ metadata:
   name: "myapp-deployment-service-frontend"
   namespace: "kubernetes-cluster-mohitgoyal"
   labels:
-    app: "myapp"
+    app: "myapp-frontend"
 spec:
   ports:
   - protocol: "TCP"
-    port: 80
+    port: 4200
   selector:
-    app: "myapp"
+    app: "myapp-frontend"
     type: "front-end"
   type: "LoadBalancer"
-  loadBalancerIP: ""
+  loadBalancerIP: "127.0.0.1"
