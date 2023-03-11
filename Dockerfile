@@ -28,5 +28,6 @@ RUN npm run build --prod --aot --outputHashing=all
 FROM base as final
 
 COPY --from=build /app/dist/ecommerce-app-mohit /usr/share/nginx/html/
+COPY .env /usr/share/nginx/html/
 
 CMD ["nginx", "-g", "daemon off;"]

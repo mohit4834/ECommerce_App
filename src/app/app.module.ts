@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AuthModule } from '@auth0/auth0-angular';
-import { environment as env } from '../environments/environment';
 import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +20,11 @@ import { SharedModule } from "./shared/shared.module";
         AppRoutingModule,
         ReactiveFormsModule,
         AuthModule.forRoot({
-            ...env.auth,
+          domain: 'dev-n7du436oqraq4e7k.us.auth0.com',
+          clientId: 'BISIeqnm9LaUWvzwMBSyF5wlUGFcY3oO',
+          authorizationParams: {
+            redirect_uri: window.location.origin
+          }
         }),
         HttpClientModule,
         HttpClientXsrfModule,
