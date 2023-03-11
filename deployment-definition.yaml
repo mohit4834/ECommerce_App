@@ -5,28 +5,6 @@ metadata:
   labels:
     name: "kubernetes-cluster-mohitgoyal"
 ---
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: special-config
-  namespace: kubernetes-cluster-mohitgoyal
-  labels:
-    app: special-config
-data:
-  API_URL: "https://api.spaceXdata.com/v3/launches?limit=100"
-  ENVIRONMENT: "dev"
-  dev_production_flag: "False"
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: top-secret
-  namespace: kubernetes-cluster-mohitgoyal
-data:
-  AUTH0_CLIENT_ID: BISIeqnm9LaUWvzwMBSyF5wlUGFcY3oO
-  AUTH0_DOMAIN: dev-n7du436oqraq4e7k.us.auth0.com
-type: Opaque
----
 apiVersion: "apps/v1"
 kind: Deployment
 metadata:
@@ -46,25 +24,6 @@ spec:
         - name: myapp-frontend
           image: goyalmohit48/ecommerce-frontend
           imagePullPolicy: Always
-          envFrom:
-          - configMapRef:
-              name: special-config
-          - secretRef:
-              name: top-secret
-          volumeMounts:
-          - name: secrets
-            mountPath: "/etc/secret"
-            readOnly: true
-          - name: configs
-            mountPath: "/etc/config"
-      volumes:
-      - name: secrets
-        secret:
-          secretName: top-secret
-          defaultMode: 0400
-      - name: configs
-        configMap:
-          name: special-config
   replicas: 2
   selector:
     matchLabels:
