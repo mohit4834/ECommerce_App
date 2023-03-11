@@ -65,10 +65,14 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ecommerce-app-mohit:build:production"
+              "browserTarget": "ecommerce-app-mohit:build:production",
+              "sslKey": "./localhost.key",
+              "sslCert": "./localhost.crt"
             },
             "development": {
-              "browserTarget": "ecommerce-app-mohit:build:development"
+              "browserTarget": "ecommerce-app-mohit:build:development",
+              "sslKey": "./localhost.key",
+              "sslCert": "./localhost.crt"
             }
           },
           "defaultConfiguration": "development"
