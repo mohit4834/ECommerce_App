@@ -32,7 +32,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": ["assets/js/jquery.js","assets/js/script.js","assets/js/bootstrap-min.js","assets/js/jquery.easing.js","assets/js/jquery.scrollTo.js"]
+            "scripts": ["src/assets/js/jquery.js","src/assets/js/script.js","src/assets/js/bootstrap-min.js","src/assets/js/jquery.easing.js","src/assets/js/jquery.scrollTo.js"]
           },
           "configurations": {
             "production": {
