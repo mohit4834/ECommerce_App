@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: myapp-frontend
-          image: goyalmohit48/ecommerce-frontend
+          image: goyalmohit48/ecommerce-nagp-frontend
           imagePullPolicy: Always
   replicas: 2
   selector:
