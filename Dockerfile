@@ -30,7 +30,7 @@ FROM base as final
 COPY --from=build /app/dist/ecommerce-app-mohit /usr/share/nginx/html/
 COPY src/.env /usr/share/nginx/html/
 COPY src/auth_config.json /usr/share/nginx/html/
-COPY localhost.key /usr/share/nginx/html/
-COPY localhost.crt /usr/share/nginx/html/
+COPY ssl.key /usr/share/nginx/html/
+COPY ssl.crt /usr/share/nginx/html/
 
 CMD ["nginx", "-g", "daemon off;"]
