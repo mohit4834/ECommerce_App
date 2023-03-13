@@ -27,22 +27,24 @@ tools {
         //         powershell 'npm run test'
         //     }
         // }
-        stage('Build Docker Image') {
+        stage('Build & Push Docker Image') {
             steps {
                 script {
-                    docker.build("goyalmohit48/ecommerce-nagp-frontend-5")
-                }
-            }
-        }
-        stage('Push Docker Image') {
-            steps {
-                script {
+                    dockerImage = docker.build("goyalmohit48/ecommerce-nagp-frontend-5")
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerHubCredentials') {
                         dockerImage.push()
-                    }
                 }
             }
         }
+        // stage('Push Docker Image') {
+        //     steps {
+        //         script {
+        //             docker.withRegistry('https://registry.hub.docker.com', 'dockerHubCredentials') {
+        //                 dockerImage.push()
+        //             }
+        //         }
+        //     }
+        // }
         stage('Kubernetes Deployment') {
             steps{
                 echo "environment variable path ${KUBECONFIG}"
