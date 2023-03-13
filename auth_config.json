@@ -1,0 +1,10 @@
+{
+  "domain": "127.0.0.1",
+  "clientId": "BISIeqnm9LaUWvzwMBSyF5wlUGFcY3oO",
+  "authorizationParams": {
+    "audience": "{yourApiIdentifier}"
+  },
+  "apiUri": "https://34.111.249.229",
+  "appUri": "http://localhost:4200",
+  "errorPath": "/error"
+}
