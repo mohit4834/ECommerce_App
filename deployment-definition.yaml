@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: myapp-frontend
-        image: goyalmohit48/ecommerce-nagp-frontend-3
+        image: goyalmohit48/ecommerce-nagp-frontend-4
         imagePullPolicy: Always
         ports:
         - containerPort: 80
@@ -42,7 +42,7 @@ spec:
         - name: SSL_KEY_FILE
           value: /etc/ssl/private/ssl.key
         - name: BACKEND_API_URL
-          value: "http://34.173.31.10"
+          value: "https://34.111.249.229"
       volumes:
       - name: ssl-certs
         secret:

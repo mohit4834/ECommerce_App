@@ -25,7 +25,7 @@ export const environment = {
     errorPath,
   },
   api : {
-    serverUrl: 'http://34.173.31.10'
+    serverUrl: 'https://34.111.249.229'
   },
   httpInterceptor: {
     allowedList: [`${apiUri}/*`],
