@@ -1,5 +1,3 @@
-@Library('docker')
-
 pipeline {
 
 agent any
@@ -11,6 +9,7 @@ environment {
 
 tools {
     nodejs 'nodejs'
+    dockerTool 'dockerMohit'
 }
 
     stages {
