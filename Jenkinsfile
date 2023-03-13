@@ -26,6 +26,22 @@ tools {
         //         powershell 'npm run test'
         //     }
         // }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    docker.build("goyalmohit48/ecommerce-nagp-frontend-4")
+                }
+            }
+        }
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerHubCredentials') {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
         stage('Kubernetes Deployment') {
             steps{
                 echo "environment variable path ${KUBECONFIG}"
