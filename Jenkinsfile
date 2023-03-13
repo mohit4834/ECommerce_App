@@ -15,8 +15,8 @@ tools {
     stages {
         stage('Build') {
             steps {
-				powershell 'npm install'
-                powershell 'npm install -g @angular/cli'
+				powershell 'npm install --legacy-peer-deps'
+                powershell 'npm install -g @angular/cli --legacy-peer-deps'
             }
         }
         // stage('Test Case Execution') {
@@ -30,7 +30,7 @@ tools {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("goyalmohit48/ecommerce-nagp-frontend-4")
+                    docker.build("goyalmohit48/ecommerce-nagp-frontend-5")
                 }
             }
         }

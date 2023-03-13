@@ -16,8 +16,8 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
 COPY package.json /app/package.json
-RUN npm install
-RUN npm install -g @angular/cli
+RUN npm install --legacy-peer-deps
+RUN npm install -g @angular/cli --legacy-peer-deps
 
 # add app
 COPY . /app
