@@ -5,6 +5,7 @@ agent any
 environment {
     scannerHome = tool name: 'Test_Sonar'
     KUBECONFIG = 'C:/Users/mohitgoyal/.kube/config'
+    CHROME_BIN='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
 }
 
 tools {
