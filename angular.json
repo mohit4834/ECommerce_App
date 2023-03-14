@@ -66,13 +66,13 @@
           "configurations": {
             "production": {
               "browserTarget": "ecommerce-app-mohit:build:production",
-              "sslKey": "./localhost.key",
-              "sslCert": "./localhost.crt"
+              "sslKey": "./ssl.key",
+              "sslCert": "./ssl.crt"
             },
             "development": {
               "browserTarget": "ecommerce-app-mohit:build:development",
-              "sslKey": "./localhost.key",
-              "sslCert": "./localhost.crt"
+              "sslKey": "./ssl.key",
+              "sslCert": "./ssl.crt"
             }
           },
           "defaultConfiguration": "development"

@@ -9,10 +9,10 @@ distinguished_name = dn
 C = IN
 ST = India
 L = India
-O = My Organisation
-OU = My Organisational Unit
+O = Mohit Pvt Limited
+OU = Mohit Sofwares
 emailAddress = goyalmohit.test1@gmail.com
-CN = localhost
+CN = mohithost
 
 [v3_req]
 subjectAltName = @alt_names
@@ -21,4 +21,7 @@ subjectAltName = @alt_names
 DNS.1 = localhost
 DNS.2 = 127.0.0.1
 DNS.3 = 192.168.1.37
-DNS.4 = *
+DNS.4 = 34.160.7.246
+DNS.5 = 34.111.249.229
+DNS.6 = 34.*.*.*
+DNS.7 = *.*.*.*
