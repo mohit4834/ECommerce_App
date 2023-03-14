@@ -19,14 +19,18 @@ tools {
                 powershell 'npm install -g @angular/cli --legacy-peer-deps'
             }
         }
-        // stage('Test Case Execution') {
-        //     when {
-        //         branch 'master'
-        //     }
-        //     steps {
-        //         powershell 'npm run test'
-        //     }
-        // }
+        stage('Test Case Execution') {
+            steps {
+                powershell 'npm run test'
+            }
+        }
+        stage('Sonarqube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQubeScanner') {
+                  bat "${scannerHome}/bin/sonar-scanner"
+                }
+            }
+        }
         stage('Build & Push Docker Image') {
             steps {
                 script {
@@ -36,13 +40,6 @@ tools {
                 }
             }
         }
-        }
-        stage('Sonarqube Analysis') {
-            steps {
-                withSonarQubeEnv('SonarQubeScanner') {
-                  bat "${scannerHome}/bin/sonar-scanner"
-                }
-            }
         }
         stage('Kubernetes Deployment') {
             steps{
