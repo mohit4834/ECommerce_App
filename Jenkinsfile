@@ -27,7 +27,7 @@ tools {
         // }
         stage('Sonarqube Analysis') {
             steps {
-                withSonarQubeEnv('Test_Sonar') {
+                withSonarQubeEnv('SonarQubeScanner') {
                   powershell 'npm run sonar'
                 }
             }
