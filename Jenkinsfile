@@ -35,7 +35,7 @@ tools {
         stage('Build & Push Docker Image') {
             steps {
                 script {
-                    dockerImage = docker.build("goyalmohit48/ecommerce-nagp-frontend-6")
+                    dockerImage = docker.build("goyalmohit48/ecommerce-nagp-frontend-7")
                     docker.withRegistry('', 'dockerHubCredentials') {
                         dockerImage.push()
                 }
