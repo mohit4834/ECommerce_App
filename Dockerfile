@@ -28,6 +28,7 @@ RUN npm run build --prod --aot --outputHashing=all
 FROM base as final
 
 COPY --from=build /app/dist/ecommerce-app-mohit /usr/share/nginx/html/
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY .env /usr/share/nginx/html/
 COPY ssl.key /usr/share/nginx/html/
 COPY ssl.crt /usr/share/nginx/html/
