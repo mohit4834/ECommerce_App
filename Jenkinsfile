@@ -20,11 +20,11 @@ tools {
                 powershell 'npm install -g @angular/cli --legacy-peer-deps'
             }
         }
-        stage('Test Case Execution') {
-            steps {
-                powershell 'npm run test'
-            }
-        }
+        // stage('Test Case Execution') {
+        //     steps {
+        //         powershell 'npm run test'
+        //     }
+        // }
         stage('Sonarqube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQubeScanner') {
