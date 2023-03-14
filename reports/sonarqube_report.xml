@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<testExecutions version='1'>
+    <file path='src/app/app.component.spec.ts'>
+        <testCase name='AppComponent should have as title &apos;SpaceX Launch Programs&apos;' duration='71'/>
+        <testCase name='AppComponent should create the app' duration='15'/>
+        <testCase name='AppComponent should render title' duration='16'/>
+    </file>
+    <file path='src/app/all/all.component.spec.ts'>
+        <testCase name='AllComponent should create' duration='82'/>
+        <testCase name='AllComponent should load Filtered data' duration='53'/>
+    </file>
+    <file path='src/app/shared/component/default/default.component.spec.ts'>
+        <testCase name='DefaultComponent should call filterData' duration='54'/>
+        <testCase name='DefaultComponent should create' duration='65'/>
+        <testCase name='DefaultComponent should call filterData with 2007' duration='61'/>
+        <testCase name='DefaultComponent should call filterData with 2007 and navigate to all' duration='51'/>
+    </file>
+    <file path='src/app/core/services/fetch-data.service.spec.ts'>
+        <testCase name='FetchDataService getUnfilteredData should return a observable of array in getUnfilteredData' duration='13'/>
+        <testCase name='FetchDataService getUnfilteredData should return a observable of array in getLaunchData' duration='9'/>
+        <testCase name='FetchDataService should be created' duration='6'/>
+    </file>
+</testExecutions>
