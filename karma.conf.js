@@ -31,6 +31,7 @@ module.exports = function (config) {
       ChromeHeadlessCI: {
         base: 'ChromeHeadless',
         flags: ['--no-sandbox'],
+        binary: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
       },
     },
     singleRun: false,
