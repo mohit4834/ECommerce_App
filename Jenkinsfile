@@ -30,22 +30,20 @@ tools {
         stage('Build & Push Docker Image') {
             steps {
                 script {
-                    dockerImage = docker.build("goyalmohit48/ecommerce-nagp-frontend-5")
-                    docker.withRegistry('https://registry.hub.docker.com', 'dockerHubCredentials') {
+                    dockerImage = docker.build("goyalmohit48/ecommerce-nagp-frontend-6")
+                    docker.withRegistry('', 'dockerHubCredentials') {
                         dockerImage.push()
                 }
             }
         }
         }
-        // stage('Push Docker Image') {
-        //     steps {
-        //         script {
-        //             docker.withRegistry('https://registry.hub.docker.com', 'dockerHubCredentials') {
-        //                 dockerImage.push()
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Sonarqube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQubeScanner') {
+                  bat "${scannerHome}/bin/sonar-scanner"
+                }
+            }
+        }
         stage('Kubernetes Deployment') {
             steps{
                 echo "environment variable path ${KUBECONFIG}"
