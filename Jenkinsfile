@@ -27,8 +27,8 @@ tools {
         // }
         stage('Sonarqube Analysis') {
             steps {
-                withSonarQubeEnv('SonarQubeScanner') {
-                  bat "${scannerHome}/bin/sonar-scanner"
+                withSonarQubeEnv('Test_Sonar') {
+                  powershell 'npm run sonar'
                 }
             }
         }
