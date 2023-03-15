@@ -46,7 +46,7 @@ tools {
             steps{
                 echo "environment variable path ${KUBECONFIG}"
                 echo "workspace path is ${env.WORKSPACE}"
-                powershell gcloud auth login
+                powershell "gcloud auth login"
                 powershell "kubectl apply -f deployment-definition.yaml"
             }
         }
