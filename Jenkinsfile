@@ -3,7 +3,6 @@ pipeline {
 agent any
 
 environment {
-    scannerHome = tool name: 'Test_Sonar'
     KUBECONFIG = 'C:/Users/mohitgoyal/.kube/config'
     CHROME_BIN='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
 }
@@ -46,7 +45,8 @@ tools {
             steps{
                 echo "environment variable path ${KUBECONFIG}"
                 echo "workspace path is ${env.WORKSPACE}"
-                powershell "kubectl --kubeconfig=${KUBECONFIG} apply -f deployment-definition.yaml"
+                powershell gcloud auth login
+                powershell "kubectl apply -f deployment-definition.yaml"
             }
         }
     }
