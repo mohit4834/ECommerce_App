@@ -4,6 +4,7 @@ agent any
 
 environment {
     scannerHome = tool name: 'Test_Sonar'
+    KUBECONFIG = '/home/goyalmohit_test1/.kube/config'
     CHROME_BIN='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
     HOME = '.'
 }
@@ -46,7 +47,7 @@ tools {
             steps{
                 echo "workspace path is ${env.WORKSPACE}"
                 // sh "gcloud auth login"
-                sh "kubectl apply -f deployment-definition.yaml"
+                sh "kubectl --kubeconfig=${KUBECONFIG} apply -f deployment-definition.yaml"
             }
         }
     }
