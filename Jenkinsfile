@@ -44,7 +44,6 @@ tools {
         // }
         stage('Kubernetes Deployment') {
             steps{
-                echo "environment variable path ${KUBECONFIG}"
                 echo "workspace path is ${env.WORKSPACE}"
                 // sh "gcloud auth login"
                 sh "kubectl apply -f deployment-definition.yaml"
