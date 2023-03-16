@@ -14,12 +14,12 @@ tools {
 }
 
     stages {
-        stage('Build') {
-            steps {
-				sh 'npm install --legacy-peer-deps'
-                sh 'npm install -g @angular/cli --legacy-peer-deps'
-            }
-        }
+        // stage('Build') {
+        //     steps {
+				// sh 'npm install --legacy-peer-deps'
+        //         sh 'npm install -g @angular/cli --legacy-peer-deps'
+        //     }
+        // }
         // stage('Test Case Execution') {
         //     steps {
         //         sh 'npm run test'
@@ -32,18 +32,19 @@ tools {
         //         }
         //     }
         // }
-        stage('Build & Push Docker Image') {
-            steps {
-                script {
-                    dockerImage = docker.build("goyalmohit48/ecommerce-nagp-frontend-7")
-                    docker.withRegistry('', 'dockerHubCredentials') {
-                        dockerImage.push()
-                }
-            }
-        }
-        }
+        // stage('Build & Push Docker Image') {
+        //     steps {
+        //         script {
+        //             dockerImage = docker.build("goyalmohit48/ecommerce-nagp-frontend-7")
+        //             docker.withRegistry('', 'dockerHubCredentials') {
+        //                 dockerImage.push()
+        //         }
+        //     }
+        // }
+        // }
         stage('Kubernetes Deployment') {
             steps{
+                echo "environment variable path ${KUBECONFIG}"
                 echo "workspace path is ${env.WORKSPACE}"
                 // sh "gcloud auth login"
                 sh "kubectl apply -f deployment-definition.yaml"
