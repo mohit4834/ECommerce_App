@@ -18,28 +18,28 @@ tools {
     stages {
         stage('Build') {
             steps {
-				sh 'npm install --legacy-peer-deps'
-                sh 'npm install -g @angular/cli --legacy-peer-deps'
+				powershell 'npm install --legacy-peer-deps'
+                powershell 'npm install -g @angular/cli --legacy-peer-deps'
             }
         }
         // stage('Test Case Execution') {
         //     steps {
-        //         sh 'npm run test'
+        //         powershell 'npm run test'
         //     }
         // }
         stage('Sonarqube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQubeScanner') {
-                  sh 'npm run sonar'
+                  powershell 'npm run sonar'
                 }
             }
         }
-        stage('Build & Push Docker Image') {
+        stage('Build & Pupowershell Docker Image') {
             steps {
                 script {
                     dockerImage = docker.build("goyalmohit48/ecommerce-nagp-frontend-8")
                     docker.withRegistry('', 'dockerHubCredentials') {
-                        dockerImage.push()
+                        dockerImage.pupowershell()
                 }
             }
         }
@@ -47,8 +47,8 @@ tools {
         stage('Kubernetes Deployment') {
             steps{
                 echo "workspace path is ${env.WORKSPACE}"
-                // sh "gcloud auth login"
-                sh "kubectl --kubeconfig=${KUBECONFIG} apply -f deployment-definition.yaml"
+                // powershell "gcloud auth login"
+                powershell "kubectl --kubeconfig=${KUBECONFIG} apply -f deployment-definition.yaml"
             }
         }
     }
