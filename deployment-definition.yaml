@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: myapp-frontend
-        image: goyalmohit48/ecommerce-nagp-frontend-7
+        image: goyalmohit48/ecommerce-nagp-frontend-8
         imagePullPolicy: Always
         ports:
         - containerPort: 80
