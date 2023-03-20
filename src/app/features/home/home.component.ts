@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '@auth0/auth0-angular';
 import { Observable } from 'rxjs/internal/Observable';
 import { productModel } from 'src/app/core/models/product.model';
@@ -13,8 +14,13 @@ export class HomeComponent implements OnInit {
 
   productsList : productModel[] = [];
   isAuthenticated$: Observable<boolean> = this.authService.isAuthenticated$;
-  constructor(private authService: AuthService, private messageService: MessageService) {
-    this.isAuthenticated$.subscribe(val => {console.log("isAuthenticated$ value is",val)})
+  searchForm: FormGroup;
+
+  constructor(private authService: AuthService, private messageService: MessageService, private fb: FormBuilder ) {
+    this.isAuthenticated$.subscribe(val => {console.log("isAuthenticated$ value is",val)});
+    this.searchForm = this.fb.group({
+      searchValue: ['', Validators.required],
+    });
   }
   ngOnInit(): void {
     this.messageService.getAllProducts().subscribe((result:any) => {
@@ -32,6 +38,17 @@ export class HomeComponent implements OnInit {
         screen_hint: 'signup',
       },
     });
+  }
+
+  handleSearch():void {
+    this.messageService.getSearchProducts(this.searchForm.controls['searchValue'].value).subscribe((result:any) => {
+      console.log('product list fetched is : ', result);
+      if (result) {
+        this.productsList = result.products;
+      } else {
+        console.warn('No result found for the ',this.searchForm.controls['searchValue'].value, 'criteria');
+      }
+    })
   }
 
 }

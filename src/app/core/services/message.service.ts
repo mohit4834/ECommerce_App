@@ -34,6 +34,28 @@ export class MessageService {
     );
   };
 
+  getSearchProducts = (searchString: string): Observable<ApiResponseModel> => {
+    const config: RequestConfigModel = {
+      url: `${env.api.serverUrl}/products/search?search=${searchString}`,
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
+    };
+
+    return this.http.get(config.url,config.headers).pipe(
+      mergeMap((response:any) => {
+        console.log('response received from the getSearchProducts api is : ', response);
+        const { data, error } = response;
+
+        return of(
+          response
+        );
+      })
+    );
+  };
+
   getProtectedResource = (): Observable<ApiResponseModel> => {
     const config: RequestConfigModel = {
       url: `${env.api.serverUrl}/api/messages/protected`,
