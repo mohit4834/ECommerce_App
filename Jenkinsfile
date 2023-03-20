@@ -34,12 +34,12 @@ tools {
                 }
             }
         }
-        stage('Build & Pupowershell Docker Image') {
+        stage('Build & push Docker Image') {
             steps {
                 script {
                     dockerImage = docker.build("goyalmohit48/ecommerce-nagp-frontend-8")
                     docker.withRegistry('', 'dockerHubCredentials') {
-                        dockerImage.pupowershell()
+                        dockerImage.push()
                 }
             }
         }
