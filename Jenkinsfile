@@ -6,7 +6,7 @@ environment {
     scannerHome = tool name: 'Test_Sonar'
     // KUBECONFIG = '/home/goyalmohit_test1/.kube/config'
     KUBECONFIG = 'C:/Users/mohitgoyal/.kube/config'
-    // CHROME_BIN='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
+    CHROME_BIN='C:/Users/mohitgoyal/AppData/Local/Google/Chrome/Application/chrome.exe'
     HOME = '.'
 }
 
