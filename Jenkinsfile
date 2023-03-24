@@ -26,7 +26,7 @@ tools {
             steps {
               echo "workspace path is ${env.WORKSPACE}"
               echo "env path is ${env}"
-              sh "sudo google-chrome-stable"
+              // sh "sudo google-chrome-stable"
                 sh 'npm run test'
             }
         }
