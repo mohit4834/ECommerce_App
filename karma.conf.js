@@ -26,12 +26,11 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadlessNoSandbox'],
     customLaunchers: {
-      ChromeHeadlessCI: {
+      ChromeHeadlessNoSandbox: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox'],
-        binary: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
+        flags: ['--no-sandbox']
       },
     },
     singleRun: false,
