@@ -30,13 +30,13 @@ tools {
                 sh 'npm run test'
             }
         }
-        stage('Sonarqube Analysis') {
-            steps {
-                withSonarQubeEnv('SonarQubeScanner') {
-                  sh 'npm run sonar'
-                }
-            }
-        }
+        // stage('Sonarqube Analysis') {
+        //     steps {
+        //         withSonarQubeEnv('SonarQubeScanner') {
+        //           sh 'npm run sonar'
+        //         }
+        //     }
+        // }
         stage('Build & push Docker Image') {
             steps {
                 script {
