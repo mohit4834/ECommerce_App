@@ -18,19 +18,19 @@ tools {
     stages {
         stage('Build') {
             steps {
-				powershell 'npm install --legacy-peer-deps'
-                powershell 'npm install -g @angular/cli --legacy-peer-deps'
+				sh 'npm install --legacy-peer-deps'
+                sh 'npm install -g @angular/cli --legacy-peer-deps'
             }
         }
         stage('Test Case Execution') {
             steps {
-                powershell 'npm run test'
+                sh 'npm run test'
             }
         }
         stage('Sonarqube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQubeScanner') {
-                  powershell 'npm run sonar'
+                  sh 'npm run sonar'
                 }
             }
         }
@@ -47,7 +47,7 @@ tools {
         stage('Kubernetes Deployment') {
             steps{
                 echo "workspace path is ${env.WORKSPACE}"
-                powershell "kubectl --kubeconfig=${KUBECONFIG} apply -f deployment-definition.yaml"
+                sh "kubectl --kubeconfig=${KUBECONFIG} apply -f deployment-definition.yaml"
             }
         }
     }
