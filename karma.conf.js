@@ -30,7 +30,8 @@ module.exports = function (config) {
     customLaunchers: {
       ChromeHeadlessNoSandbox: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox']
+        flags: ['--no-sandbox'],
+        executablePath: "/usr/bin/google-chrome-stable",
       },
     },
     singleRun: false,
