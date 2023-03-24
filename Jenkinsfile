@@ -24,6 +24,9 @@ tools {
         }
         stage('Test Case Execution') {
             steps {
+              echo "workspace path is ${env.WORKSPACE}"
+              echo "env path is ${env}"
+              sh "google-chrome-stable"
                 sh 'npm run test'
             }
         }
