@@ -31,7 +31,7 @@ module.exports = function (config) {
       ChromeHeadlessNoSandbox: {
         base: 'ChromeHeadless',
         flags: ['--no-sandbox'],
-        executablePath: "/usr/bin/google-chrome-stable",
+        executablePath: "/usr/bin/google-chrome",
       },
     },
     singleRun: false,
