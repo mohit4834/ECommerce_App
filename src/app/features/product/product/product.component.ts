@@ -16,15 +16,17 @@ export class ProductComponent {
   constructor(private route: ActivatedRoute, private messageService: MessageService) {
     this.route.queryParams.subscribe((params: any) => {
       console.log('params received is : ', params);
-      this.messageService.getSearchProducts(params.title).subscribe((result:any) => {
-        console.log('product list fetched for clicked product is : ', result);
-        if (result) {
-          this.productsList = result.products;
-          this.currentProduct = this.productsList[0];
-        } else {
-          console.warn('No result found for the ',params, 'criteria');
-        }
-      })
+      if (params && params.title) {
+        this.messageService.getSearchProducts(params.title).subscribe((result:any) => {
+          console.log('product list fetched for clicked product is : ', result);
+          if (result) {
+            this.productsList = result.products;
+            this.currentProduct = this.productsList[0];
+          } else {
+            console.warn('No result found for the ',params, 'criteria');
+          }
+        })
+      }
     })
   }
 
