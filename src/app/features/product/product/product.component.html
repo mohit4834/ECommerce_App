@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <title>404 Page | Shop+ - Responsive HTML5 Multipurpose Ecommerce Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  <script src="js/modernizr-2.6.2.min.js"></script>
+   <meta charset="utf-8">
+   <title>404 Page | Shop+ - Responsive HTML5 Multipurpose Ecommerce Template</title>
+   <meta name="description" content="">
+   <meta name="keywords" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 </head>
 <body>
    <header>
@@ -653,7 +649,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-6 col-sm-12 title">
-                  <h1>Page Title</h1>
+                  <h1>{{currentProduct.title}}</h1>
                </div>
                <div class="col-md-6 col-sm-12">
                   <div class="b-crumbs pull-right"><a >Home</a> <i class="arrow_carrot-right"></i> Basic Page</div>
@@ -668,390 +664,38 @@
    <div class="pg-body">
       <div class="container">
          <div class="row">
-            <div class="page-404">
-               <h1>404</h1>
-               <h5>PAGE NOT FOUND</h5>
-               <p>You can go to <a >homepage</a> or search what are you looking</p>
-               <form action="/">
-                  <div class="required form-group search col-sm-9 col-xs-12">
-                     <input type="text" class="placeholder-fix" placeholder="Enter your text">
-                     <i class="icon-magnifier field-icon"></i>
-                  </div>
-                  <div class="col-sm-3 col-xs-12">
-                        <input type="submit" class="btn btn-third-col" value="search">
-                  </div>
-               </form>
+          <div class="col-md-5 col-sm-5 pl-item">
+            <figure>
+               <a>
+                  <img src={{currentProduct.imagePath}} alt={{currentProduct.title}}>
+               </a>
+               <label class="pl-badge">NEW</label>
+               <figcaption>
+                  <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
+                  <a  class="pl-button pl-qview" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a>
+                  <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
+                  <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
+               </figcaption>
+            </figure>
+            <div class="pl-caption">
+               <p class="pl-price-block">
+                  <span class="pl-price-old">$ {{currentProduct.price}}</span>
+                  <span class="pl-price">$ {{currentProduct.price}}</span>
+               </p>
+               <p class="pl-name">{{currentProduct.title}}</p>
+               <span class="stars-rating stars-4"><span class="stars"></span></span>
             </div>
          </div>
-         <section>
-            <div class="best-product">
-            <div class="col-xs-12"><h6>BEST PRODUCTS OF THE WEEK</h6></div>
-               <div class="gap-70"></div>
-               <div class="products-list pl-carousel">
-                  <ul class="pl-pages">
-                     <li class="active">
-                        <div class="row">
-                           <div class="col-md-3 col-sm-6 pl-item">
-                              <figure>
-                                 <figcaption>
-                                    <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
-                                    <a  class="pl-button pl-qview" data-toggle="modal" data-tooltip title="Quick View" data-target="#qview"><i class="icon-eye"></i></a>
-                                    <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
-                                    <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
-                                 </figcaption>
-                                 <a href="product-page.html">
-                                    <img src="images/products/thumbs/1.jpg" alt="">
-                                 </a>
-                                 <span class="pl-badge">NEW</span>
-
-                              </figure>
-                              <div class="pl-caption">
-                                 <p class="pl-price-block">
-                                    <span class="pl-price-old">$ 950.00</span>
-                                    <span class="pl-price">$ 900.00</span>
-                                 </p>
-                                 <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
-                                 <span class="stars-rating stars-4"><span class="stars"></span></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 pl-item">
-                              <figure>
-                                 <a href="product-page.html">
-                                    <img src="images/products/thumbs/2.jpg" alt="">
-                                 </a>
-                                 <span class="pl-badge">- 50%</span>
-                                 <figcaption>
-                                    <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
-                                   <a  class="pl-button pl-qview" data-toggle="modal" data-tooltip title="Quick View" data-target="#qview2"><i class="icon-eye"></i></a>
-                                    <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
-                                    <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
-                                 </figcaption>
-                              </figure>
-                              <div class="pl-caption">
-                                 <p class="pl-price-block">
-                                    <span class="pl-price-old"></span>
-                                    <span class="pl-price">$ 900.00</span>
-                                 </p>
-                                 <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
-                                 <span class="stars-rating"><span class="stars"></span></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 pl-item">
-                              <figure>
-                                 <a href="product-page.html">
-                                    <img src="images/products/thumbs/3.jpg" alt="">
-                                 </a>
-                                 <figcaption>
-                                    <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
-                                    <a  class="pl-button pl-qview" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a>
-                                    <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
-                                    <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
-                                 </figcaption>
-                              </figure>
-                              <div class="pl-caption">
-                                 <p class="pl-price-block">
-                                    <span class="pl-price-old"></span>
-                                    <span class="pl-price">$ 900.00</span>
-                                 </p>
-                                 <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
-                                 <span class="stars-rating"><span class="stars"></span></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 pl-item">
-                              <figure>
-                                 <a href="product-page.html">
-                                    <img src="images/products/thumbs/4.jpg" alt="">
-                                 </a>
-                                 <figcaption>
-                                    <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
-                                    <a  class="pl-button pl-qview" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a>
-                                    <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
-                                    <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
-                                 </figcaption>
-                              </figure>
-                              <div class="pl-caption">
-                                 <p class="pl-price-block">
-                                    <span class="pl-price-old"></span>
-                                    <span class="pl-price">$ 900.00</span>
-                                 </p>
-                                 <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
-                                 <span class="stars-rating"><span class="stars"></span></span>
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-                     <li>
-                        <div class="row">
-                           <div class="col-md-3 col-sm-6 pl-item">
-                              <figure>
-                                 <a href="product-page.html">
-                                    <img src="images/products/thumbs/5.jpg" alt="">
-                                 </a>
-                                 <figcaption>
-                                    <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
-                                    <a  class="pl-button pl-qview" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a>
-                                    <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
-                                    <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
-                                 </figcaption>
-                              </figure>
-                              <div class="pl-caption">
-                                 <p class="pl-price-block">
-                                    <span class="pl-price-old"></span>
-                                    <span class="pl-price">$ 900.00</span>
-                                 </p>
-                                 <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
-                                 <span class="stars-rating"><span class="stars"></span></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 pl-item">
-                              <figure>
-                                 <a href="product-page.html">
-                                    <img src="images/products/thumbs/6.jpg" alt="">
-                                 </a>
-                                 <figcaption>
-                                    <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
-                                    <a  class="pl-button pl-qview" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a>
-                                    <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
-                                    <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
-                                 </figcaption>
-                              </figure>
-                              <div class="pl-caption">
-                                 <p class="pl-price-block">
-                                    <span class="pl-price-old"></span>
-                                    <span class="pl-price">$ 900.00</span>
-                                 </p>
-                                 <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
-                                 <span class="stars-rating"><span class="stars"></span></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 pl-item">
-                              <figure>
-                                 <a href="product-page.html">
-                                    <img src="images/products/thumbs/7.jpg" alt="">
-                                 </a>
-                                 <figcaption>
-                                    <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
-                                    <a  class="pl-button pl-qview" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a>
-                                    <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
-                                    <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
-                                 </figcaption>
-                              </figure>
-                              <div class="pl-caption">
-                                 <p class="pl-price-block">
-                                    <span class="pl-price-old"></span>
-                                    <span class="pl-price">$ 900.00</span>
-                                 </p>
-                                 <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
-                                 <span class="stars-rating"><span class="stars"></span></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 pl-item">
-                              <figure>
-                                 <a href="product-page.html">
-                                    <img src="images/products/thumbs/8.jpg" alt="">
-                                 </a>
-                                 <figcaption>
-                                    <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
-                                    <a  class="pl-button pl-qview" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a>
-                                    <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
-                                    <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
-                                 </figcaption>
-                              </figure>
-                              <div class="pl-caption">
-                                 <p class="pl-price-block">
-                                    <span class="pl-price-old"></span>
-                                    <span class="pl-price">$ 900.00</span>
-                                 </p>
-                                 <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
-                                 <span class="stars-rating"><span class="stars"></span></span>
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-                     <li>
-                        <div class="row">
-                           <div class="col-md-3 col-sm-6 pl-item">
-                              <figure>
-                                 <a href="product-page.html">
-                                    <img src="images/products/thumbs/2.jpg" alt="">
-                                 </a>
-                                 <figcaption>
-                                    <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
-                                    <a  class="pl-button pl-qview" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a>
-                                    <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
-                                    <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
-                                 </figcaption>
-                              </figure>
-                              <div class="pl-caption">
-                                 <p class="pl-price-block">
-                                    <span class="pl-price-old"></span>
-                                    <span class="pl-price">$ 900.00</span>
-                                 </p>
-                                 <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
-                                 <span class="stars-rating"><span class="stars"></span></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 pl-item">
-                              <figure>
-                                 <a href="product-page.html">
-                                    <img src="images/products/thumbs/1.jpg" alt="">
-                                 </a>
-                                 <figcaption>
-                                    <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
-                                    <a  class="pl-button pl-qview" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a>
-                                    <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
-                                    <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
-                                 </figcaption>
-                              </figure>
-                              <div class="pl-caption">
-                                 <p class="pl-price-block">
-                                    <span class="pl-price-old">$ 950.00</span>
-                                    <span class="pl-price">$ 900.00</span>
-                                 </p>
-                                 <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
-                                 <span class="stars-rating stars-4"><span class="stars"></span></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 pl-item">
-                              <figure>
-                                 <a href="product-page.html">
-                                    <img src="images/products/thumbs/4.jpg" alt="">
-                                 </a>
-                                 <figcaption>
-                                    <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
-                                    <a  class="pl-button pl-qview" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a>
-                                    <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
-                                    <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
-                                 </figcaption>
-                              </figure>
-                              <div class="pl-caption">
-                                 <p class="pl-price-block">
-                                    <span class="pl-price-old"></span>
-                                    <span class="pl-price">$ 900.00</span>
-                                 </p>
-                                 <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
-                                 <span class="stars-rating"><span class="stars"></span></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 pl-item">
-                              <figure>
-                                 <a href="product-page.html">
-                                    <img src="images/products/thumbs/5.jpg" alt="">
-                                 </a>
-                                 <figcaption>
-                                    <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
-                                    <a  class="pl-button pl-qview" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a>
-                                    <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
-                                    <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
-                                 </figcaption>
-                              </figure>
-                              <div class="pl-caption">
-                                 <p class="pl-price-block">
-                                    <span class="pl-price-old"></span>
-                                    <span class="pl-price">$ 900.00</span>
-                                 </p>
-                                 <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
-                                 <span class="stars-rating"><span class="stars"></span></span>
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-                     <li>
-                        <div class="row">
-                           <div class="col-md-3 col-sm-6 pl-item">
-                              <figure>
-                                 <a href="product-page.html">
-                                    <img src="images/products/thumbs/6.jpg" alt="">
-                                 </a>
-                                 <figcaption>
-                                    <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
-                                    <a  class="pl-button pl-qview" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a>
-                                    <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
-                                    <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
-                                 </figcaption>
-                              </figure>
-                              <div class="pl-caption">
-                                 <p class="pl-price-block">
-                                    <span class="pl-price-old"></span>
-                                    <span class="pl-price">$ 900.00</span>
-                                 </p>
-                                 <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
-                                 <span class="stars-rating"><span class="stars"></span></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 pl-item">
-                              <figure>
-                                 <a href="product-page.html">
-                                    <img src="images/products/thumbs/7.jpg" alt="">
-                                 </a>
-                                 <figcaption>
-                                    <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
-                                    <a  class="pl-button pl-qview" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a>
-                                    <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
-                                    <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
-                                 </figcaption>
-                              </figure>
-                              <div class="pl-caption">
-                                 <p class="pl-price-block">
-                                    <span class="pl-price-old"></span>
-                                    <span class="pl-price">$ 900.00</span>
-                                 </p>
-                                 <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
-                                 <span class="stars-rating"><span class="stars"></span></span>
-                              </div>
-                           </div>
-                            <div class="col-md-3 col-sm-6 pl-item">
-                              <figure>
-                                 <a href="product-page.html">
-                                    <img src="images/products/thumbs/3.jpg" alt="">
-                                 </a>
-                                 <figcaption>
-                                    <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
-                                    <a  class="pl-button pl-qview" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a>
-                                    <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
-                                    <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
-                                 </figcaption>
-                              </figure>
-                              <div class="pl-caption">
-                                 <p class="pl-price-block">
-                                    <span class="pl-price-old"></span>
-                                    <span class="pl-price">$ 900.00</span>
-                                 </p>
-                                 <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
-                                 <span class="stars-rating"><span class="stars"></span></span>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 pl-item">
-                              <figure>
-                                 <a href="product-page.html">
-                                    <img src="images/products/thumbs/8.jpg" alt="">
-                                 </a>
-                                 <figcaption>
-                                    <a  class="pl-button pl-addcart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag"></i></a>
-                                    <a  class="pl-button pl-qview" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="icon-eye"></i></a>
-                                    <a  class="pl-button pl-compare" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
-                                    <a  class="pl-button pl-wishlist" data-toggle="tooltip" data-placement="top" title="Add To Wish List"><i class="icon-heart"></i></a>
-                                 </figcaption>
-                              </figure>
-                              <div class="pl-caption">
-                                 <p class="pl-price-block">
-                                    <span class="pl-price-old"></span>
-                                    <span class="pl-price">$ 900.00</span>
-                                 </p>
-                                 <p class="pl-name">Pure Cotton Shirt Slim Fit</p>
-                                 <span class="stars-rating"><span class="stars"></span></span>
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-                  </ul>
-                  <div class="pl-controls">
-                     <a  class="pl-ctl-left"></a>
-                     <a  class="pl-ctl-right"></a>
-                  </div>
-               </div>
-            </div>
-         </section>
+         <div class="col-md-5 col-sm-5">
+          <div>
+            <h4>Category: {{currentProduct.category.title}}</h4>
+            <h4>Manufacturer: {{currentProduct.manufacturer}}</h4>
+            <h4>Description: {{currentProduct.description}}</h4>
+            <h4>Product Code: {{currentProduct.productCode}}</h4>
+            <h4>Available: {{currentProduct.available}}</h4>
+          </div>
+         </div>
+         </div>
          <div class="row subscribe">
             <div class="col-md-6 col-sm-12"><h3><span class="icon-envelope"></span>SUBSCRIBE FOR OUR NEWSLETTER</h3></div>
             <div class="col-md-6 col-sm-12"><form action="/">
@@ -1908,17 +1552,5 @@
 
 
 
-   <!-- JS Libs -->
-   <script src="../../assets/js/jquery-1.11.0.min.js"></script>
-   <script src="../../assets/js/jquery-ui-1.10.4.custom.min.js"></script>
-   <script src="../../assets/js/bootstrap.min.js"></script>
-   <script src="../../assets/js/jquery.bxslider.min.js"></script>
-   <script src="../../assets/js/jquery-accessibleMegaMenu.js"></script>
-   <script src="../../assets/js/jquery.validationEngine.js"></script>
-   <script src="../../assets/js/jquery.validationEngine-en.js"></script>
-   <script src="../../assets/js/jquery.elevatezoom.js"></script>
-   <script src="../../assets/js/mediaelement-and-player.min.js"></script>
-   <script src="../../assets/js/plugins.js"></script>
-   <script src="../../assets/js/script.js"></script>
 </body>
 </html>

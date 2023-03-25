@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 import { Observable } from 'rxjs/internal/Observable';
 import { productModel } from 'src/app/core/models/product.model';
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
   isAuthenticated$: Observable<boolean> = this.authService.isAuthenticated$;
   searchForm: FormGroup;
 
-  constructor(private authService: AuthService, private messageService: MessageService, private fb: FormBuilder ) {
+  constructor(private authService: AuthService, private messageService: MessageService, private fb: FormBuilder, private router: Router ) {
     this.isAuthenticated$.subscribe(val => {console.log("isAuthenticated$ value is",val)});
     this.searchForm = this.fb.group({
       searchValue: ['', Validators.required],
@@ -49,6 +50,10 @@ export class HomeComponent implements OnInit {
         console.warn('No result found for the ',this.searchForm.controls['searchValue'].value, 'criteria');
       }
     })
+  }
+
+  navigateToProductDetailPage(currentProduct: productModel): void {
+    this.router.navigate(['product-detail'], {queryParams: {title: currentProduct.title}});
   }
 
 }
