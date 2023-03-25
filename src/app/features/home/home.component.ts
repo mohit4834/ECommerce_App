@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
   handleSignUp(): void {
     this.authService.loginWithRedirect({
       appState: {
-        target: '/profile',
+        target: '/home',
       },
       authorizationParams: {
         screen_hint: 'signup',
