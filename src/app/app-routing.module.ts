@@ -28,6 +28,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'profile',
+    loadChildren: () =>
+      import('./features/profile/profile.module').then(
+        (m) => m.ProfileModule
+      ),
+  },
+  {
     path: 'compare',
     loadChildren: () =>
       import('./features/compare/compare.module').then((m) => m.CompareModule),
