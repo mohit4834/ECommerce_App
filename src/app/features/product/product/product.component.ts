@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '@auth0/auth0-angular';
 import { MessageService } from 'src/app/core';
 import { productModel } from 'src/app/core/models/product.model';
 
@@ -13,7 +14,7 @@ export class ProductComponent {
   public productsList: productModel[] = [];
   public currentProduct: any;
 
-  constructor(private route: ActivatedRoute, private messageService: MessageService) {
+  constructor(private route: ActivatedRoute, private messageService: MessageService, private router : Router, private authService: AuthService) {
     this.route.queryParams.subscribe((params: any) => {
       console.log('params received is : ', params);
       if (params && params.title) {
@@ -28,6 +29,21 @@ export class ProductComponent {
         })
       }
     })
+  }
+
+  handleSignUp(): void {
+    this.authService.loginWithRedirect({
+      appState: {
+        target: '/home',
+      },
+      authorizationParams: {
+        screen_hint: 'signup',
+      },
+    });
+  }
+
+  navigateToPage(page: string): void {
+    this.router.navigate([page]);
   }
 
 }

@@ -56,4 +56,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['product-detail'], {queryParams: {title: currentProduct.title}});
   }
 
+  navigateToPage(page: string): void {
+    this.router.navigate([page]);
+  }
+
 }

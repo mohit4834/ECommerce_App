@@ -19,4 +19,8 @@ export class CallbackComponent {
     this.isAuthenticated$.subscribe(val => {console.log("isAuthenticated$ value is",val)})
   }
 
+  navigateToPage(page: string): void {
+    this.router.navigate([page]);
+  }
+
 }
