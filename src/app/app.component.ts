@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ecommerce-app-mohit';
-  test commit 1;
+  // test commit 1;
 }
 
